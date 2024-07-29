@@ -1,4 +1,5 @@
 ﻿using ConsoleTables;
+using SolKom.TK.Classes;
 
 namespace SolKom.TK
 {
@@ -17,6 +18,7 @@ namespace SolKom.TK
             Console.WriteLine("--------------------------------------------------------------------");
             Spit("f", ConsoleColor.Blue, "actions - Displays current factions and relations.");
             Spit("p", ConsoleColor.Blue, "lanets - Displays current planets.");
+            Spit("g", ConsoleColor.Blue, "overnments - Displays base relation modifiers between all government types.");
             Spit("e", ConsoleColor.Red, "xit - Closes the Game and Console.");
             Console.WriteLine("--------------------------------------------------------------------\n");
 
@@ -34,7 +36,10 @@ namespace SolKom.TK
                     Factions_Options();
                     break;
                 case "planets" or "p":
-                    Console.WriteLine($"factions...");
+                    Console.WriteLine($"PLANETS CURRENTLY UNFINISHED");
+                    break;
+                case "governments" or "g":
+                    Governments_Options();
                     break;
                 case "exit" or "e":
                     Console.WriteLine("Exiting...");
@@ -44,6 +49,39 @@ namespace SolKom.TK
                     Console.WriteLine("Input invalid or command not present.");
                     break;
             }
+            MainMenu_Options();
+        }
+
+        void Governments_Options()
+        {
+            Console.Clear();
+            Console.WriteLine("GOVERNMENTS============================================================\n");
+            var table = new ConsoleTable("#");
+            List<string> governments = Enum.GetNames(typeof(GovernmentType)).ToList();
+            foreach (var govType in governments)
+            {
+                table.Columns.Add(govType);
+            }
+
+            int numba = 0;
+            var baseOpinionMods = UniversalData.Instance.GetBaseOpinionModifierTable();
+
+            // For each column,
+            List<object> values;
+            for (int x = 0; x < baseOpinionMods[0].Length; x++)
+            {
+                values = new() { numba };
+                for (int y = 0; y < baseOpinionMods[x].Length; y++)
+                {
+                    values.Add(baseOpinionMods[y]);
+                }
+                table.AddRow(values);
+                numba++;
+            }
+
+            table.Write();
+            Console.WriteLine("\nGOVERNMENTS============================================================\n");
+
             MainMenu_Options();
         }
         #endregion
@@ -79,8 +117,8 @@ namespace SolKom.TK
         {
             var factions = UniversalData.Instance.GetFactions();
             string? result = Console.ReadLine();
-            int.TryParse(result, out int number);
-            if (number < factions.Count && number > 0)
+            var parsedRight = int.TryParse(result, out int number);
+            if (number < factions.Count && number >= 0 && parsedRight)
             {
                 Console.Clear();
                 Console.WriteLine("RELATIONS=============================================================\n");
@@ -104,11 +142,11 @@ namespace SolKom.TK
                 case "factions" or "f":
                     Console.WriteLine("Going back...");
                     Factions_Options();
-                    break;
+                    return;
                 case "exit" or "e":
                     Console.WriteLine("Going back...");
                     MainMenu_Options();
-                    break;
+                    return;
                 default:
                     Console.WriteLine("Input invalid or command not present.");
                     break;

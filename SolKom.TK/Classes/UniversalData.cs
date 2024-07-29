@@ -1,4 +1,5 @@
 ﻿using SolKom.TK.Classes;
+using System.Security.AccessControl;
 
 namespace SolKom.TK
 {
@@ -10,7 +11,26 @@ namespace SolKom.TK
         /// Game storage for all present factions. Adding a new faction is a direct addition to the dictionary.
         /// </summary>
         private readonly List<Faction> Factions;
+        private readonly int[][] BaseOpinionModifierTable = new int[][]
+        {
 
+        //                            ANARCHY   TECHNOCRACY     THEOCRACY   SCOURGE     NIEKRONIAK  REPUBLIC   MONARCHY     AUTOCRACY    OLIGARCHY    DEMOCRACY   COMMUNAL    TOTALITARIAT  COLLECTIVE
+        new int[] /* ANARCHY */     { -50,      -50,            -50,        -100,       -50,        -50,       -50,         -50,         -50,         -50,        -50,        -50,          -50  },
+        new int[] /* TECHNOCRACY */ { -50,      25,             -50,        -100,       0,          10,        -25,         0,           10,          -25,        -100,       0,            -25  },
+        new int[] /* THEOCRACY */   { -50,      -50,            -50,        -100,       -50,        -25,       0,           -50,         -20,         -50,        -25,        -25,          -50  },
+        new int[] /* SCOURGE */     { -100,     -100,           -100,       -100,       -100,       -100,      -100,        -100         -100,        -100,       -100,       -100,         -100 },
+        new int[] /* NIEKRONIAK */  { -50,      -50,            -50,        -100,       100,        -50,       -50,         -25,         -25,         -50,        -50,        10,           -25  },
+        new int[] /* REPUBLIC */    { -50,      -25,            -25,        -100,       -50,        50,        -50,         -50          -25,         50,         25,         -100,         -25  },
+        new int[] /* MONARCHY */    { -50,      -25,            0,          -100,       -50,        -50,       -10,         0,           -25,         -50,        -50,        -25,          -100 },
+        new int[] /* AUTOCRACY */   { -50,      0,              -50,        -100,       -25,        -50,       0,           0,           0,           -50,        -50,        0,            -100 },
+        new int[] /* OLIGARCHY */   { -50,      -25,            10,         -100,       -25,        -25,       -25,         0,           -25,         -50,        -50,        0,            -50  },
+        new int[] /* DEMOCRACY */   { -50,      50,             -50,        -100,       -50,        -25,       -50,         -50,         -50,         50,         0,          -100,         -25  },
+        new int[] /* COMMUNAL */    { -50,      0,              -25,        -100,       -100,       25,        -50,         -50,         -50,         0,          0,          -100,         -25  },
+        new int[] /* TOTALITARIAT*/ { -50,      0,              -25,        -100,       10,         -100,      -25,         0,           0,           -100,       -100,       10,           -100 },
+        new int[] /* COLLECTIVE */  { -50,      -100,           -50,        -100,       -25,        -25,       -100,        -100,        -50,         -25,        -25,        -100,         -100 },
+
+        };
+        
         public UniversalData()
         {
             Instance = this;
@@ -40,7 +60,9 @@ namespace SolKom.TK
             Factions.ForEach(faction =>
             {
                 faction.FactionRelations = Factions.Select(f => new FactionRelation(0, f.Id)).ToList();
+                faction.SetOpinion(faction.Id, 100, false);
             });
+            //GetFaction("base_faction_scavengers").SetOpinion();
         }
 
         /// <summary>
@@ -53,6 +75,11 @@ namespace SolKom.TK
             if (Factions != null)
                 return Factions;
             throw new Exception("Attempted to call GetFactions() whilst factions were still null. Called before Factions was initialized, somehow.");
+        }
+
+        public int[][] GetBaseOpinionModifierTable()
+        {
+            return BaseOpinionModifierTable;
         }
 
         public Faction GetFaction(string id)
@@ -71,6 +98,13 @@ namespace SolKom.TK
 
             }
         }
+
+       /* public static bool IsHostile(Faction faction1, Faction faction2)
+        {
+            int index1 = (int)faction1;
+            int index2 = (int)faction2;
+            return relations[index1][index2];
+        }*/
     }
 
 }

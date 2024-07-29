@@ -1,5 +1,4 @@
 ﻿using ConsoleTables;
-using SolKom.TK.Classes;
 
 namespace SolKom.TK
 {

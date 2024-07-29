@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "dgSpecHash": "btgLWvpTW4pw8D5ZVOm4LUA9kSPFvjRHRfQ8EdRio6BuhhnbeeoywD7RBqiY7GmdOs0OlgaHruGJw+o3HDH9lw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LukeZurg22_Gaming\\source\\repos\\SolKom\\SolKom.TK\\SolKom.TK.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\consoletables\\2.6.1\\consoletables.2.6.1.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk\\4.8.2\\opentk.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.audio.openal\\4.8.2\\opentk.audio.openal.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.compute\\4.8.2\\opentk.compute.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.core\\4.8.2\\opentk.core.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.glcontrol\\3.3.3\\opentk.glcontrol.3.3.3.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.graphics\\4.8.2\\opentk.graphics.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.input\\4.8.2\\opentk.input.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.mathematics\\4.8.2\\opentk.mathematics.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.redist.glfw\\3.3.8.39\\opentk.redist.glfw.3.3.8.39.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.common\\4.8.2\\opentk.windowing.common.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.desktop\\4.8.2\\opentk.windowing.desktop.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.8.2\\opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OpenTK.GLControl 3.3.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OpenTK.GLControl",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

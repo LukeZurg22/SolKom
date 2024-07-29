@@ -1,0 +1,12 @@
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\bin\Debug\net6.0\SolKom.TK.Core.deps.json
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\bin\Debug\net6.0\SolKom.TK.Core.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\bin\Debug\net6.0\SolKom.TK.Core.pdb
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.csproj.AssemblyReference.cache
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.AssemblyInfoInputs.cache
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.AssemblyInfo.cs
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.csproj.CoreCompileInputs.cache
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\refint\SolKom.TK.Core.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\SolKom.TK.Core.pdb
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK.Core\obj\Debug\net6.0\ref\SolKom.TK.Core.dll

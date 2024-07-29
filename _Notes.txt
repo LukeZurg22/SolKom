@@ -1,0 +1,32 @@
+Windows & Other Compatability OpenGL
+https://github.com/AvaloniaUI/Avalonia/discussions/5477
+
+https://github.com/AvaloniaUI/Avalonia/issues/8506
+
+https://opentk.net/
+
+Project Startup 	[DONE] 	https://www.youtube.com/watch?v=NSwJLhqJjNo
+Framework 	[NOT] 	https://www.youtube.com/watch?v=XRtxJR4M3w0
+Shaders		[NOT] 	https://www.youtube.com/watch?v=Rg8f3HvOF3Q
+Shader Abstraction 	[NOT] 	https://www.youtube.com/watch?v=za1dopATg4s
+
+
+Tiny starsector game but with vintage story waypoint screen. Travel, food, towns, supplies, mass combat rules, dice rolls, d20 Modern main Character, simple graphics, food is orange, HP is green, done in Avalonia and/or OpenTK, Niecronians, Xyph, Circibon, Sarak, Arialial, Fuscia, and some other worlds are set in stone. Everything else is randomly generated. Faction management, gun customization.
+
+Take scraps from Solar Kommand. Above a Sarak Star is how the game begins, w. backstory and whatnot. Special Characters still there.
+
+Generate Galaxy:
+Reach each PIXEL / CHUNK
+Color 1 = Lowest chance for spawn
+Color 2 = Middling chance
+Color 3 = Highest chance
+	Requirements:
+- Random number generator with hardcoded DC chance to spawn.
+- "Spawn" = instantiate an instance of some planet
+
+Class Planet
+- Planet type (create enum?)
+- Planet name (string)
+- Planet devestation (int? unsure.)
+
+Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity.

@@ -2,16 +2,16 @@
 {
     public static class Modifiers
     {
-        enum Modifier
+        public enum PlanetModifierID
         {
-            modifier_one,
-            modifier_two,
-            modifier_three,
-            modifier_four,
+            modifier_sacre_one, // UNFINISHED
+            modifier_two,       // UNFINISHED
+            modifier_three,     // UNFINISHED
+            modifier_four,      // UNFINISHED
         }
-        private static readonly Dictionary<Modifier, PlanetModifier> PlanetModifiers = new()
+        private static readonly Dictionary<PlanetModifierID, PlanetModifier> PlanetModifiers = new()
         {
-            {  Modifier.modifier_one, new PlanetModifier(PlanetStatistic.Sacre, 0, "", ModMode.Additive) },
+            {  PlanetModifierID.modifier_sacre_one, new PlanetModifier(PlanetStatistic.Sacre, 0, "", ModMode.Additive) },
         };
         /*private static readonly Dictionary<Modifier, FactionModifier> FactionModifiers = new()
         {

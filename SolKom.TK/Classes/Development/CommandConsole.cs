@@ -20,7 +20,7 @@ namespace SolKom.TK
             {
                 new Option("f", ConsoleColor.Blue, "actions - Displays current factions and relations."),
                 new Option("p", ConsoleColor.Blue, "lanets - Displays current planets."),
-                new Option("s", ConsoleColor.Blue, "systems - Displays current systems."),
+                new Option("s", ConsoleColor.Blue, "ystems - Displays current systems."),
                 new Option("g", ConsoleColor.Blue, "overnments - Displays base relation modifiers between all government types."),
                 new Option("e", ConsoleColor.Red, "xit - Closes the Game and Console.")
             });
@@ -38,7 +38,11 @@ namespace SolKom.TK
                     Factions_Display();
                     break;
                 case "planets" or "p":
-                    Console.WriteLine($"PLANETS CURRENTLY UNFINISHED");
+                    for (int i = 0; i < 10; i++)
+                    {
+                        var randomFaction = UniversalData.Instance.GetFactions().ToArray().GetRandomElement();
+                        Console.WriteLine(new Planet(randomFaction));
+                    }
                     break;
                 case "systems" or "s":
                     Console.WriteLine($"SYSTEMS CURRENTLY UNFINISHED");

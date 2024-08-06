@@ -66,7 +66,7 @@ namespace SolKom.TK.Classes
 
         public override string ToString()
         {
-            return $"{Id} | {Name} | {GovernmentType}";
+            return $"{Id}";
         }
 
         /// <summary>

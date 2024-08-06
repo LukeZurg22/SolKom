@@ -15,10 +15,13 @@ namespace SolKom.TK
         protected override void Initialize()
         {
             UniversalData data = new();
-            Planet p = new();
-            
-            CommandConsole commandConsole = new();
-            commandConsole.Initialize();
+
+            Task.Run(() =>
+            {
+                Console.WriteLine("Running SolKom Command Window thread...");
+                CommandConsole commandConsole = new();
+                commandConsole.Initialize();
+            });
         }
 
         protected override void LoadContent()

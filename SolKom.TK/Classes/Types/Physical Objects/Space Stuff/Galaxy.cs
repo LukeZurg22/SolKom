@@ -43,6 +43,7 @@ namespace SolKom.TK
                         }*/
                     }
                 }
+                Console.Write("\n");
             }
 
 

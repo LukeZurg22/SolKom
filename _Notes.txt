@@ -19,10 +19,13 @@ Tiny starsector game but with vintage story waypoint screen. Travel, food, towns
 Take scraps from Solar Kommand. Above a Sarak Star is how the game begins, w. backstory and whatnot. Special Characters still there.
 
 Fleet combat could be simulated, or done by dice roll. Ala WH40K
-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=ANNOTATION=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 [WIP] : Work in progress label.
 [IMPL] : Possible backburner ideas / implementations.
-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+[ERR] : Code or related code that causes an unexpected behaviour even though it compiles.
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+
 Generate Galaxy:
 Reach each PIXEL / CHUNK
 Color 1 = Lowest chance for spawn
@@ -44,7 +47,7 @@ F_ATK VALUE
 
 - Game ID
 - Opinion modifier of each other.
-- Flag (internally stored and base64 upload)
+
 - Name
 - Government type
 - Stability
@@ -66,20 +69,33 @@ F_MaxHealth (base health depends on classification)
 Implement AMSCAL system.
 
 =-=-=-=-=-=-=-=-=-=Things To Add=-=-=-=-=-=-=-=-=-=
-Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity.
-Generate random planets
+Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity. - Flag (internally stored and base64 upload)
 Formable nations
 Names seperate for planets.
 The Blade-Order (bonus vs Niecronians)
 The Varchak Rebellion (can cause unrest in the Armada, and force its collapse)
 Make governments view have government names on Y axis.
 Get-X (where X = Sector, System, Planet) to return info about specifics. Planets are numerical. Structures are alphabetical.
+Xurnacht new planet names : "Harvest Zone" "Energy Source" "Portal Candidate"
+Xyph new planet names : "Killing Fields" "Slaughter World" "Doomed Planet"
+Pirate new planet names : "Den"
 =-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 =-=-=-=-=-=-=-=-=-=Convieniences=-=-=-=-=-=-=-=-=-=-
+Generate random planets
+Make much of the data-stuff text-file-centric, loading ony on game initialization. Allows for heavy modding.
+=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=Planet Data Handling=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 (First / Last / Planet) Names read from text files that can be easily pasted-into and modified.
 Planet Id: sector-planetindex
-
-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+/* ::CUSTOM PLANETARY UPDATE THREAD::
+* Update:
+* Go through list.
+* If planet dirty, update values visible.
+* If not, move along.
+*/
+// Are planets recalculated every month tick via the passage of time? Or constantly? Flag planets and add them to a master list for updating if they're actually changed?
+	- ADD FLAGGING INTO UPDATE LIST
+	- MULTITHREADING: Have one thread just *dedicated* to going through a list and updating planets, while the other does whatever else it does.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 =-=-=-=-=-=-=-=-=Dynamic Mechanics=-=-=-=-=-=-=-=-=
 Systems follow naming schemes. Planets within systems simply follow the System's name and append prime- alpha- delta- etc etc.
 
@@ -100,3 +116,5 @@ How to do Sectors:
 Divide the map into sectors. Foreach sector, Read each section pixels, and create systems for that sector.
 
 =-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+
+

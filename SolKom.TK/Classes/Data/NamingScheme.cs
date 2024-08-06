@@ -55,9 +55,9 @@ namespace SolKom.TK.Classes.Data
                 _title = value;
             }
         }
-        string[] FirstNames { get; set; } = Array.Empty<string>();
-        string[] LastNames { get; set; } = Array.Empty<string>();
-        string[] PlanetNames { get; set; } = Array.Empty<string>();
+        public string[] FirstNames { get; set; } = Array.Empty<string>();
+        public string[] LastNames { get; set; } = Array.Empty<string>();
+        public string[] PlanetNames { get; set; } = Array.Empty<string>();
 
         public Scheme() => AssignPattern(NamingPattern.Numerical);
         public Scheme(NamingPattern pattern) => AssignPattern(pattern);
@@ -119,17 +119,12 @@ namespace SolKom.TK.Classes.Data
                     break;
             }
         }
+        
+        public string GetRandomFirstName() => FirstNames.GetRandomElement();
 
-        static string GetRandomElement(string[] array)
-        {
-            int index = Uniform.NewInclusive(0, array.Length - 1).Sample(UniversalData.RANDOM_NUMBER_GENERATOR);
-            return array[index] ?? string.Empty;
-        }
-        public string GetRandomFirstName() => GetRandomElement(FirstNames);
+        public string GetRandomLastName() => LastNames.GetRandomElement();
 
-        public string GetRandomLastName() => GetRandomElement(LastNames);
-
-        public string GetRandomPlanetName() => GetRandomElement(PlanetNames);
+        public string GetRandomPlanetName() => PlanetNames.GetRandomElement();
     }
 
 }

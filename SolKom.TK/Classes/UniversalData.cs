@@ -8,9 +8,8 @@ namespace SolKom.TK
 {
     public class UniversalData
     {
-        public static UniversalData Instance = new();
+        public static UniversalData Instance;
 
-        public static readonly SmallRng RANDOM_NUMBER_GENERATOR = SmallRng.Create();
         private readonly Galaxy Galaxy;
 
         /// <summary>

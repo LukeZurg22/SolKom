@@ -18,5 +18,7 @@ namespace SolKom.TK
         readonly Faction? Faction;
 
         // [WIP] Read pixel data and create systems.
+
+
     }
 }

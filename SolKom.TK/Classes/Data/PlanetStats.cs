@@ -1,4 +1,6 @@
-﻿namespace SolKom.TK.Classes.Data
+﻿using static SolKom.TK.Classes.Data.Modifiers;
+
+namespace SolKom.TK.Classes.Data
 {
     public enum PlanetStatistic
     {
@@ -10,12 +12,18 @@
         Habitability,
         Devastation
     }
+
+
     public class PlanetStats
     {
         public PlanetStats() { }
-        public int Sacre = 5;
+        public int BaseSacre = 0;
+
+        public int BaseDevastation = 0;
+        // [WIP] When updating devastation, get base devestation plus modifiers.
+
         int _habitability = 0;
-        public int Habitability
+        public int BaseHabitability
         {
             get
             {
@@ -37,6 +45,43 @@
                 }
             }
         }
-        public int Devastation = 0;
+
+        public int GetSacre() { return BaseSacre; }
+        
+        public int GetDevastation()
+        {
+            return BaseDevastation + 0 + 0 * 1; // [WIP] See? Why not return BaseDevastation with modifiers calculated into it on the fly. Alternatively,
+            // the only reason the value is here is to avoid overhead for constantly recalculating every get-attempt.
+        }
+
+        public int GetHabitability()
+        {
+            return BaseHabitability;    // [WIP] change habitability based on : devestation, who owns it, planet type
+        }
+
+        // [WIP] if a modifier is added or removed, make the planet dirty and put on naughty list!
+        public Dictionary<PlanetModifierID, PlanetModifier>? Modifiers = new();
+        public void MarkPlanetAsDirty()
+        {
+            // [WIP] Code
+            // Add to list of planets to update. Maybe multi-thread the updates for every sector?
+        }
+        public void AddModifier()
+        {
+            // [WIP] Code
+            MarkPlanetAsDirty();
+        }
+        public void RemoveModifier()
+        {
+            // [WIP] Code
+            MarkPlanetAsDirty();
+        }
+        public override string ToString()
+        {
+            return
+                $"\tSac / Base Sac: {GetSacre()}/{BaseSacre}" +
+                $"\n\tDev / Base Dev: {GetDevastation()}/{BaseDevastation}" +
+                $"\n\tHab / Base Hab: {GetHabitability()}/{BaseHabitability}";
+        }
     }
 }

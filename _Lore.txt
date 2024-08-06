@@ -1,0 +1,37 @@
+﻿-==============================LORE==============================-
+THE PAST
+* The Sarakaan Empire had collapsed nearly a century ago, and the Niecronian Empire had purged out the Sarak race 
+from the galaxy altogether.
+	Very few remain, and those who do, are incredibly bitter.
+
+* The Circiabon have collapsed due to the encroaching Xyphonian Scourge in the Galactic East(tm). The Eternal War has
+raged on for hundreds of centuries now, and it shows no signs of stopping. In truth, it cannot be stopped.
+
+THE PRESENT
+* Entire game takes place on the surface of a White Dwarf star named Sarak Major.
+* Stations around the star harvest it for energy, but some stations send Chaos Cultists, bandits, or worse.
+
+THE PLAYER
+* You're just a shipment handler, minding their own business, transporting goods necessary for the survival of some stations.
+* You forgot much of your past after staring into the star for just a little too long. Up to you to find out what / who you were.
+* The player is a Rogue Niecronian who will eventually become a legendary figure for leading a valiant revolt against the Niecronians.
+The revolt ultimately fails, but their name lives on, as "Ryak"
+
+THE DANGER
+* The enemies
+* The Expense(tm)						: Losing Money constantly. Need money to afford REPAIRS, and FUEL
+	-> Fuel
+	-> Repairs							: 
+	-> Lost cargo						: MAY BE BAD IDEA?
+
+THE ENEMIES
+Scavengers, Pirates (early game)		: DIFFERENTIATE BETWEEN THEM, PERHAPS LOOT-DROP WISE
+										-> Pirates attack everything. Scavengers prefer to rummage through already-dead ships.
+Former Sarak Loyalists (early game)		: HOSTILE GIVEN CERTAIN RANGE. COULD DEPEND ON REPUTATION/RENOWN?
+Circiabon vessels (mid game)			: HOSTILE AND DANGEROUS. MODERATELY GOOD LOOT.
+Circibon traders (mid game)				: TRAVELLING MERCHANTS THAT DEAL WITH POWERFUL STUFF. HARD TO KILL, RARE TO FIND.
+Xyph scouting ships (late game)			: TYPICALLY AVOID COMBAT. IF ENGAGED, ARE A VERY DEADLY YET VALUABLE THREAT.
+Niecronian scouting ships (end game)	: IMMEDIATELY HOSTILE GIVEN A RANGE. CAPABLE OF EASILY DESTROYING THE PLAYER.
+											THEY ARE VERY POWERFUL, BUT GIVE THE HIGHEST-VALUE CARGO.
+
+-================================================================-

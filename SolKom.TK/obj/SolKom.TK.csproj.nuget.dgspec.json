@@ -57,6 +57,10 @@
             "OpenTK.Mathematics": {
               "target": "Package",
               "version": "[4.8.2, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
             }
           },
           "imports": [
@@ -140,6 +144,14 @@
             "OpenTK.Mathematics": {
               "target": "Package",
               "version": "[4.8.2, )"
+            },
+            "RandN": {
+              "target": "Package",
+              "version": "[0.4.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
             }
           },
           "imports": [

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0GVxrfxcLVwhhOupK4dlpywbAE5dG/gTxHbf3nlpTcUWD7RL0pxCdD6xGeD6sIn2SyH2JuS0H8Qy8CduUhGjzg==",
+  "dgSpecHash": "XVpophhjBnEGEm826G0jfU9ANSS+UdO2Vb4KXOV1qHLu24A3ZsBInHPJwgSwCvLZT87HPBYqZAYtNYm3xgX/bg==",
   "success": true,
   "projectFilePath": "C:\\Users\\LukeZurg22_Gaming\\source\\repos\\SolKom\\SolKom.TK.Core\\SolKom.TK.Core.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,9 @@
     "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.common\\4.8.2\\opentk.windowing.common.4.8.2.nupkg.sha512",
     "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.desktop\\4.8.2\\opentk.windowing.desktop.4.8.2.nupkg.sha512",
     "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.8.2\\opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "C:\\Users\\LukeZurg22_Gaming\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []

@@ -1,20 +1,28 @@
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 Windows & Other Compatability OpenGL
 https://github.com/AvaloniaUI/Avalonia/discussions/5477
-
-https://github.com/AvaloniaUI/Avalonia/issues/8506
-
-https://opentk.net/
-
+FRAMEWORK OPTION: https://github.com/AvaloniaUI/Avalonia/issues/8506
+FRAMEWORK SOURCE: https://opentk.net/
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 Project Startup 	[DONE] 	https://www.youtube.com/watch?v=NSwJLhqJjNo
 Framework 	[NOT] 	https://www.youtube.com/watch?v=XRtxJR4M3w0
 Shaders		[NOT] 	https://www.youtube.com/watch?v=Rg8f3HvOF3Q
 Shader Abstraction 	[NOT] 	https://www.youtube.com/watch?v=za1dopATg4s
-
-
+Seperate Words w. Delimiter: https://www.dcode.fr/values-separation
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+DATA SOURCES:
+	https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+	https://www.theplanetstoday.com/planets_information_basic_facts.html
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 Tiny starsector game but with vintage story waypoint screen. Travel, food, towns, supplies, mass combat rules, dice rolls, d20 Modern main Character, simple graphics, food is orange, HP is green, done in Avalonia and/or OpenTK, Niecronians, Xyph, Circibon, Sarak, Arialial, Fuscia, and some other worlds are set in stone. Everything else is randomly generated. Faction management, gun customization.
 
 Take scraps from Solar Kommand. Above a Sarak Star is how the game begins, w. backstory and whatnot. Special Characters still there.
 
+Fleet combat could be simulated, or done by dice roll. Ala WH40K
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+[WIP] : Work in progress label.
+[IMPL] : Possible backburner ideas / implementations.
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 Generate Galaxy:
 Reach each PIXEL / CHUNK
 Color 1 = Lowest chance for spawn
@@ -24,9 +32,71 @@ Color 3 = Highest chance
 - Random number generator with hardcoded DC chance to spawn.
 - "Spawn" = instantiate an instance of some planet
 
-Class Planet
-- Planet type (create enum?)
-- Planet name (string)
-- Planet devestation (int? unsure.)
+Traits for NPCS:
+Captain can be cruel, making them less likely to give into players request. Opposite is true.
+Method: for every trait, an inverse must be possible. SolarKommand
 
+What is a fleet?
+- Overall morale
+F_Health
+F_DV
+F_ATK VALUE
+
+- Game ID
+- Opinion modifier of each other.
+- Flag (internally stored and base64 upload)
+- Name
+- Government type
+- Stability
+- Power
+- Associated Colour
+Factions are referenced by a specialized ID. Not by name. The ID must be small; not a string.
+
+Add console commands to test shenanigans.
+
+What is a ship, but a vessel?
+F_MaxHealth (base health depends on classification)
+- Ability Stats
+- Hardness
+- Classification (enum?)
+- Guns
+- Speed (FT)
+- Speed (FTL)
+
+Implement AMSCAL system.
+
+=-=-=-=-=-=-=-=-=-=Things To Add=-=-=-=-=-=-=-=-=-=
 Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity.
+Generate random planets
+Formable nations
+Names seperate for planets.
+The Blade-Order (bonus vs Niecronians)
+The Varchak Rebellion (can cause unrest in the Armada, and force its collapse)
+Make governments view have government names on Y axis.
+Get-X (where X = Sector, System, Planet) to return info about specifics. Planets are numerical. Structures are alphabetical.
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=Convieniences=-=-=-=-=-=-=-=-=-=-
+(First / Last / Planet) Names read from text files that can be easily pasted-into and modified.
+Planet Id: sector-planetindex
+
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=Dynamic Mechanics=-=-=-=-=-=-=-=-=
+Systems follow naming schemes. Planets within systems simply follow the System's name and append prime- alpha- delta- etc etc.
+
+Planet Mechanics:
+/// Modifiers
+/* 
+ * High Ore 	+1
+ * Moderate Ore	0
+ * Low Ore 	-1
+ * No Ore 		-2
+ * Radioactive
+ * Polluted
+ * Ruins
+ * Time Sink (Deduction to production)	:	Time passes slower on the planet.
+ * Time Desync (Faster production)	:	Time seems to pass by on the world more than the galaxy.
+ */
+How to do Sectors:
+Divide the map into sectors. Foreach sector, Read each section pixels, and create systems for that sector.
+
+=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-

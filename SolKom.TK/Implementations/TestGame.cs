@@ -14,8 +14,9 @@ namespace SolKom.TK
 
         protected override void Initialize()
         {
-            UniversalData data = new UniversalData();
-
+            UniversalData data = new();
+            Planet p = new();
+            
             CommandConsole commandConsole = new();
             commandConsole.Initialize();
         }

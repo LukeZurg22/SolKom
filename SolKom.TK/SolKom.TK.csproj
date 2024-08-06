@@ -8,10 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Classes\Types\Physical Objects\Space Stuff\Planet.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ConsoleTables" Version="2.6.1" />
     <PackageReference Include="OpenTK" Version="4.8.2" />
     <PackageReference Include="OpenTK.GLControl" Version="3.3.3" />
     <PackageReference Include="OpenTK.Mathematics" Version="4.8.2" />
+    <PackageReference Include="RandN" Version="0.4.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.8" />
   </ItemGroup>
 
   <ItemGroup>

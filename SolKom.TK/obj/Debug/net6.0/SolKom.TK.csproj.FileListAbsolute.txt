@@ -33,3 +33,10 @@ C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\obj\Debug\net6.0\ref\So
 C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\SolKom.TK.Core.dll
 C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\SolKom.TK.Core.pdb
 C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\ConsoleTables.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\RandN.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\RandN.Core.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\SkiaSharp.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\LukeZurg22_Gaming\source\repos\SolKom\SolKom.TK\bin\Debug\net6.0\runtimes\win-x86\native\libSkiaSharp.dll

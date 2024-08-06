@@ -1,0 +1,89 @@
+﻿-=============================================Stations================================================-
+#	ID		NAME				HAS MUSIC			APT DESCRIPTION
+01	00.		Nexorium			[MUSIC]
+02	01.		Vralakar			[MUSIC]
+03	02.		Zar'kalthar			!					Closest station. Has bug boy, Ikkik.
+04	03.		Reminit				!
+05	04.		Valianakar			!
+06	05.		Jullakkarath		!	
+07	06.		Clemence Station	!
+08	07.		Tophat Station		!
+09	08.		Sepulcher of Order  !
+10	09.		!					!
+11	10.		!					!
+12	11.		!					!					
+13	12.		Shevivunak			!					The last and most dangerous station to visit. It is a Niecronian station.
+
+IDEA CONCEPTS:
+? A station owned by followers of the Chaos Cult of the Headmaster.
+-=============================================Stations================================================-
+
+
+-=============================================NPCS================================================-
+ID				NPC NAME			STATION			STATION ID
+PLAYER			-> The Player		Their Ship		-1
+BUG_MERCHANT	-> Ikkik			Zar'kalthar		2
+PRIEST			-> Nerephezym		Nexorium		0
+WAR_CRIMINAL	-> Wault			
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+-=================================================================================================-
+
+-=========================================NPCS LISTED=============================================-
+0.	The Player
+Described as "Hideous" and "Malformed"; they are not very well liked.
+Knows nothing about themselves, what they look like or their past.
+
+1.	Ikkik
+Just a little bug dude who sells trash cargo.
+Can also do repairs, but not very good.
+
+2. Nerephezym [IDEA WORK IN PROGRESS]
+A very devout follower of Circi, god of Robots and Machines.
+
+3.	Wault
+Circiabon Lore Dump
+War Criminal in hiding.
+Gives decent advice.
+
+4.
+
+5.
+
+6.
+
+7.
+-=================================================================================================-
+
+Table for Labelling Quests:
+Y_Z
+
+Where X used to Constitute the Following:
+	Early-Game	= E, for "Early"
+	Mid-Game	= M, for "Mid"
+	Late-Game	= L, for "Late"
+	End-Game	= F, for "Final"
+Y Constitutes the quest's general label / id.
+Z Constitutes the quest's specific stage.
+
+-=============================================QUESTS==============================================-
+QUEST NAME			ID								ORIGIN					DESTINATION
+Rookie Numbers		ROOKIE_NUMBERS_000				Shevivunak				Zar'kalthar
+* There is some cargo leftover in the ship labelled delivery to Zar'kalthar.
+Q_ Why would the player transport Niecroinian goods to a backwater Sarak station?
+A_ The player is a Rogue Niecronian who will eventually become a legendary figure.
+
+
+
+
+IDEA CONCEPTS:
+* Consider using Bethesda's handling of quests, ala name.0, name.10, name.12 etc etc.
+-=============================================QUESTS==============================================-

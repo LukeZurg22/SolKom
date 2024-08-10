@@ -24,6 +24,7 @@ Fleet combat could be simulated, or done by dice roll. Ala WH40K
 [WIP] : Work in progress label.
 [IMPL] : Possible backburner ideas / implementations.
 [ERR] : Code or related code that causes an unexpected behaviour even though it compiles.
+[TEMP] : Temporary code indended to be deleted later. Often used just for comments on poor code.
 =-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 
 Generate Galaxy:
@@ -38,7 +39,7 @@ Color 3 = Highest chance
 Traits for NPCS:
 Captain can be cruel, making them less likely to give into players request. Opposite is true.
 Method: for every trait, an inverse must be possible. SolarKommand
-
+Eu4-esque, or Stellaris?
 What is a fleet?
 - Overall morale
 F_Health
@@ -48,12 +49,18 @@ F_ATK VALUE
 - Game ID
 - Opinion modifier of each other.
 
+Faction:
 - Name
 - Government type
-- Stability
-- Power
+- Stability			// Determines how internally stable one's faction is.
+- Industrial Power		// Spent making ships
+- Economic Power		// Spent buying things
+- Personnel Power		// Spent creating units
+- Affluence		// Spent manipulating other factions
+- ! Technological Edge	// Provides a bonus against other factions.
+
 - Associated Colour
-Factions are referenced by a specialized ID. Not by name. The ID must be small; not a string.
+Factions are referenced by a specialized ID. Not by name.
 
 Add console commands to test shenanigans.
 
@@ -66,23 +73,58 @@ F_MaxHealth (base health depends on classification)
 - Speed (FT)
 - Speed (FTL)
 
-Implement AMSCAL system.
+Implement AMSCAL system as something; special mechanic?
 
+=-=-=-=-=-=-=-=-=-=NEXT TIME=-=-=-==-=-=-=-=-=-=-
+[!] Country modifiers.
+[!] 	-> Country stats
+Random Sector instantiation
+Random faction instantiation
+Proper Planet modifiers
+More planet stats (like, 2 -> 4 more. This has gotta be good.)
 =-=-=-=-=-=-=-=-=-=Things To Add=-=-=-=-=-=-=-=-=-=
 Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity. - Flag (internally stored and base64 upload)
 Formable nations
-Names seperate for planets.
 The Blade-Order (bonus vs Niecronians)
 The Varchak Rebellion (can cause unrest in the Armada, and force its collapse)
-Make governments view have government names on Y axis.
 Get-X (where X = Sector, System, Planet) to return info about specifics. Planets are numerical. Structures are alphabetical.
 Xurnacht new planet names : "Harvest Zone" "Energy Source" "Portal Candidate"
 Xyph new planet names : "Killing Fields" "Slaughter World" "Doomed Planet"
 Pirate new planet names : "Den"
+Ship guns classifications & gun related stuff from old Solar Kommand
+Faction and planet modifiers on a planet. Get the type of enum and assess what respective stat that enum addresses.
+Conquest bar on planets that drain manpower or invasion fleet power.
+
+Country modifiers on planets will apply to the country anyway so long as that planet is under their control.
+	-> Planet modifiers on countries will apply to *every* planet so long as it is under their control.
+Add Durations for modifiers.
+Add System-Wide modifiers.
+Add Sector-Wide modifiers.
+Add Galaxy-Wide modifiers.
 =-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 =-=-=-=-=-=-=-=-=-=Convieniences=-=-=-=-=-=-=-=-=-=-
 Generate random planets
 Make much of the data-stuff text-file-centric, loading ony on game initialization. Allows for heavy modding.
+Make governments view have government names on Y axis.
+Localization Handling
+	-> Localization Type (English, German, ...)
+	-> Localization moved to text files
+		-> Modifiers (Modifier.cs)
+Note down in *THE SPREADSHEET*:
+	-> All  Modifiers of all types and effects
+	-> All base-game factions
+	-> All planet types & base Sacre
+
+=-=-=-=-=-=-=-=-=-=Unimportant Backburner Features=-=-=-=-=-=-=-=-=-=-
+Seperate Names for planets per faction under control.
+Custom nation designer.
+=-=-=-=-=-=-=-=-=-=Performance=-=-=-=-=-=-=-=-=-=-=
+Turn Lists in
+	SpaceSystem
+	Sector
+	Planet
+	Faction
+	-> Into arrays. Functions to navigate would need overhaul.
 =-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=Planet Data Handling=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 (First / Last / Planet) Names read from text files that can be easily pasted-into and modified.
 Planet Id: sector-planetindex

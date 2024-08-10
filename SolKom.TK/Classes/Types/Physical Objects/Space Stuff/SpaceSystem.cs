@@ -14,9 +14,14 @@ namespace SolKom.TK.Classes
         /// System location in Galactic Space.
         /// </summary>
         Vector3 Location;
-        CelestialBody[]? CelestialBodies;
+        List<CelestialBody> CelestialBodies;
         Structure[]? Structures;
         Faction SystemOwner;
+
+        internal void RandomInstantiate()
+        {
+            throw new NotImplementedException();
+        }
         // [WIP] Star defined in system. Also other stats?
 
 

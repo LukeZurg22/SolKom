@@ -1,12 +1,14 @@
 ﻿using SolKom.TK.Classes.Data;
+using System.Drawing;
 
 namespace SolKom.TK.Classes
 {
+    // [WIP] Maybe convert RelationModifiers to actual modifiers.
     public class FactionRelation
     {
         public int Opinion = 0;
         public string Id = string.Empty;
-        Dictionary<string, int> Modifiers = new();
+        Dictionary<string, int> RelationModifiers = new();
 
         public FactionRelation(int opinion, string id)
         {
@@ -15,18 +17,34 @@ namespace SolKom.TK.Classes
         }
     }
 
+
+    public class FactionStats
+    {
+        public int Stability;               // Determines how internally stable one's faction is.
+        public float EconomicPower;         // Spent buying things
+        public float IndustrialPower;       // Spent making ships
+        public float PersonnelPower;        // Spent creating units
+        public float Affluence;             // Spent manipulating other factions
+        public float TechnologicalEdge;     // Measurement of how far ahead one is of the rest of the galaxy. Provides bonuses.
+    }
+
     public class Faction
     {
         public string Id;
         public string Name;
-        public string Flag = string.Empty; /// [WIP]
+        public string Flag = string.Empty; /// [WIP] Use URI to file, or store image locally.
+        public Color Color;
         public GovernmentType GovernmentType;
-        public List<FactionRelation> FactionRelations = new();
-        public Scheme NamingScheme;
+        public NamingScheme NamingScheme;
+        public PoliticalStatus PoliticalStatus;
+        public FactionStats Stats;
+        readonly List<Planet> Planets; // [WIP] Instead of planets pointing to their factions, factions point to planets?
+        readonly List<FactionRelation> Relations = new();
+        readonly List<ModifierStruct>? Modifiers = new();
 
         public void SetOpinion(string id, int opinion, bool isMutual)
         {
-            var factionRelation = FactionRelations.FirstOrDefault(relation => relation.Id.Equals(id));
+            var factionRelation = Relations.FirstOrDefault(relation => relation.Id.Equals(id));
             if (factionRelation != null)
                 factionRelation.Opinion = opinion;
             if (isMutual)
@@ -48,26 +66,23 @@ namespace SolKom.TK.Classes
             Id = id;
             Name = name;
             GovernmentType = governmentType;
-            NamingScheme = new Scheme(pattern);
+            NamingScheme = new NamingScheme(pattern);
         }
         public Faction(string id, string name, GovernmentType governmentType)
         {
             Id = id;
             Name = name;
             GovernmentType = governmentType;
-            NamingScheme = new Scheme();
+            NamingScheme = new NamingScheme();
         }
         public Faction(string id, string name)
         {
             Id = id;
             Name = name;
-            NamingScheme = new Scheme();
+            NamingScheme = new NamingScheme();
         }
 
-        public override string ToString()
-        {
-            return $"{Id}";
-        }
+        public override string ToString() => Id;
 
         /// <summary>
         /// Calculates the hostility (true) or peacefulness (false) between two factions. The first parameter is the aggressor.

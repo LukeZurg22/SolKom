@@ -41,7 +41,7 @@ namespace SolKom.TK
                     for (int i = 0; i < 10; i++)
                     {
                         var randomFaction = UniversalData.Instance.GetFactions().ToArray().GetRandomElement();
-                        Console.WriteLine(new Planet(randomFaction));
+                        Console.WriteLine(new Planet(randomFaction).ToPrintString());
                     }
                     break;
                 case "systems" or "s":
@@ -153,7 +153,7 @@ namespace SolKom.TK
             Console.WriteLine($"RELATIONS OF {faction.Id} \\/\\/\\/");
             var table = new ConsoleTable("#", "FACTION ID", "OPINION");
             int numba = 0;
-            foreach (var relation in faction.FactionRelations)
+            foreach (var relation in faction.Relations)
             {
                 table.AddRow(numba++, relation.Id, relation.Opinion);
             }

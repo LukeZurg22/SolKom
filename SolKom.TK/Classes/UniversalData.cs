@@ -68,7 +68,7 @@ namespace SolKom.TK
             Factions.ForEach(faction =>
             {
                 //Console.WriteLine($"\nRELATIONS OF {faction.Name}");
-                faction.FactionRelations = Factions.Select(f => new FactionRelation(0, f.Id)).ToList();
+                faction.Relations = Factions.Select(f => new FactionRelation(0, f.Id)).ToList();
                 foreach (Faction otherFaction in Factions.Where(otherFaction => !otherFaction.Id.Equals(faction.Id)))
                 {
                     int baseOpinion = BaseOpinionModifierTable[(int)faction.GovernmentType][(int)otherFaction.GovernmentType];

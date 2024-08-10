@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolKom.TK", "SolKom.TK.csproj", "{9555B6D1-43CC-457D-BC51-3317848C3900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolKom.TK", "SolKom.TK.csproj", "{9555B6D1-43CC-457D-BC51-3317848C3900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolKom.TK.Core", "..\SolKom.TK.Core\SolKom.TK.Core.csproj", "{413C8B68-37F8-4E27-8812-8AB97818249C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolKom.TK.Core", "..\SolKom.TK.Core\SolKom.TK.Core.csproj", "{413C8B68-37F8-4E27-8812-8AB97818249C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25AD46A9-9B14-4564-8770-006BF425491B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

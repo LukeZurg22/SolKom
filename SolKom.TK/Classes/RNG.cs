@@ -8,6 +8,16 @@ namespace SolKom.TK.Classes
     {
         public static readonly SmallRng RANDOM_NUMBER_GENERATOR = SmallRng.Create();
 
+        /// <summary>
+        /// A simple function just to get a random number for testing.
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static int RN(int max)
+        {
+            return Uniform.NewInclusive(0, max).Sample(RANDOM_NUMBER_GENERATOR);
+        }
+
         [Obsolete("Replaced by the superior extension-version of this function.")]
         public static string GetRandomElement(string[] array)
         {

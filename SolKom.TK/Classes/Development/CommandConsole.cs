@@ -155,7 +155,7 @@ namespace SolKom.TK
             int numba = 0;
             foreach (var relation in faction.Relations)
             {
-                table.AddRow(numba++, relation.Id, relation.Opinion);
+                table.AddRow(numba++, relation.OtherFactionID, relation.Opinion);
             }
             table.Write();
             Console.WriteLine("\nRELATIONS=============================================================\n");

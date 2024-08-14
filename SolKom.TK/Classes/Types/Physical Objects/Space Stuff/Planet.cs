@@ -4,6 +4,7 @@ using SolKom.TK.Classes.Data;
 
 namespace SolKom.TK
 {
+    #region Data Stuff
     public enum PlanetType
     {
         GasGiant,
@@ -42,6 +43,7 @@ namespace SolKom.TK
         }
         public override string ToString() => $"{Sector}-{System}-{Planet}";
     }
+    #endregion
 
     // [WIP] modifiers for planets.
     /// [WIP] Note that a possible ID system may be used for planets Ala Paradox. Could save on memory.

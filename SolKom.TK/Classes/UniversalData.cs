@@ -16,7 +16,7 @@ namespace SolKom.TK
         /// Game storage for all present factions. Adding a new faction is a direct addition to the dictionary.
         /// </summary>
         private readonly List<Faction> Factions;
-        private readonly int[][] BaseOpinionModifierTable = new int[][]
+        private static readonly int[][] BaseOpinionModifierTable = new int[][]
         {
                //                         Anarchy | Democracy | Republic | Monarchy | Autocracy | Oligarchy | Technocracy | Communal | Theocracy | Totalitariat | Collective | Scourge | Niekroniak |
             //                            ANARCHY   DEMOCRACY   REPUBLIC    MONARCHY    AUTOCRACY   OLIGARCHY   TECHNOCRACY     COMMUNAL    THEOCRACY   TOTALITARIAT    SCOURGE     NIEKRONIAK  COLLECTIVE
@@ -34,9 +34,8 @@ namespace SolKom.TK
             new int[] /* NIEKRONIAK */  { -25,      -50,        -50,        -25,        -25,        -25,        -15,            -25,        -25,        0,              -100,       100,        -25,    },
             new int[] /* COLLECTIVE */  { -25,      -15,        -25,        -25,        -25,        -25,        -25,            -25,        -25,        -25,            -100,       -25,        -100,   },
         };
-
- 
-
+        public static int GetBaseOpinion(GovernmentType aggressor, GovernmentType defender) => BaseOpinionModifierTable[(int)aggressor][(int)defender];
+        
         public UniversalData()
         {
             Instance = this;
@@ -67,28 +66,15 @@ namespace SolKom.TK
         {
             Factions.ForEach(faction =>
             {
-                //Console.WriteLine($"\nRELATIONS OF {faction.Name}");
-                faction.Relations = Factions.Select(f => new FactionRelation(0, f.Id)).ToList();
-                foreach (Faction otherFaction in Factions.Where(otherFaction => !otherFaction.Id.Equals(faction.Id)))
+                faction.Relations.Clear();
+                foreach (Faction otherFaction in Factions/*.Where(otherFaction => !otherFaction.Id.Equals(faction.Id))*/)
                 {
-                    int baseOpinion = BaseOpinionModifierTable[(int)faction.GovernmentType][(int)otherFaction.GovernmentType];
-                    faction.SetOpinion(otherFaction.Id, baseOpinion, true);
-                    //Console.WriteLine($"{baseOpinion} | {otherFaction.Name}");
+                    faction.Relations.Add(new FactionRelation(faction, otherFaction));
                 }
-
-                // Factions love themselves, except for the Xyph.
-                if (!faction.Id.Equals("base_faction_xyph"))
-                {
-                    faction.SetOpinion(faction.Id, 100, false);
-                }
-                // If its the Xyph, make them hate themselves.
-                else
-                {
-                    faction.SetOpinion(faction.Id, -100, false);
-                }
+                faction.SetSelfBaseOpinion(100);
             });
-            //GetFaction("base_faction_scavengers").SetOpinion();
-
+            // Factions love themselves, except for the Xyph.
+            GetFaction("base_faction_xyph").SetSelfBaseOpinion(-100);
         }
 
         /// <summary>
@@ -104,7 +90,6 @@ namespace SolKom.TK
         }
 
         public int[][] GetBaseOpinionModifierTable() => BaseOpinionModifierTable;
-
 
         public Faction GetFaction(string id)
         {

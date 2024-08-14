@@ -118,6 +118,7 @@ Note down in *THE SPREADSHEET*:
 =-=-=-=-=-=-=-=-=-=Unimportant Backburner Features=-=-=-=-=-=-=-=-=-=-
 Seperate Names for planets per faction under control.
 Custom nation designer.
+Niecronian faction has random events where planet is harassed by High Command who make demands, lest the country's government be reorganized to their preference.
 =-=-=-=-=-=-=-=-=-=Performance=-=-=-=-=-=-=-=-=-=-=
 Turn Lists in
 	SpaceSystem

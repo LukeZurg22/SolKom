@@ -40,7 +40,7 @@ namespace SolKom.TK
                 case "planets" or "p":
                     for (int i = 0; i < 10; i++)
                     {
-                        var randomFaction = UniversalData.Instance.GetFactions().ToArray().GetRandomElement();
+                        var randomFaction = FactionManager.GetFactions().ToArray().GetRandomElement();
                         Console.WriteLine(new Planet(randomFaction).ToPrintString());
                     }
                     break;
@@ -70,7 +70,7 @@ namespace SolKom.TK
             Console.WriteLine("FACTONS==============================================================\n");
             var table = new ConsoleTable("#", "FACTION ID", "FACTION NAME", "FACTION GOVERNMENT");
             int numba = 0;
-            foreach (var faction in UniversalData.Instance.GetFactions())
+            foreach (var faction in FactionManager.GetFactions())
             {
                 table.AddRow(numba++, faction.Id, faction.Name, faction.GovernmentType);
             }
@@ -92,7 +92,7 @@ namespace SolKom.TK
         }
         void Factions_Input()
         {
-            var factions = UniversalData.Instance.GetFactions();
+            var factions = FactionManager.GetFactions();
             string? result = Console.ReadLine();
             var entryIsNumber = int.TryParse(result, out int number);
             if (entryIsNumber && number < factions.Count && number >= 0)
@@ -177,7 +177,7 @@ namespace SolKom.TK
             }
 
             int numba = 0;
-            var baseOpinionMods = UniversalData.Instance.GetBaseOpinionModifierTable();
+            var baseOpinionMods = Faction.GetBaseOpinionModifierTable();
 
             // For each column,
             List<object> values;

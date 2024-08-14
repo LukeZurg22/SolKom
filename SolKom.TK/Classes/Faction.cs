@@ -27,7 +27,7 @@ namespace SolKom.TK.Classes
         public Enum GetModifierID() => ModifierID;
 
         public bool Equals(RelationModifier other) => this.ModifierID.Equals(other);
-        
+
     }
 
     // [WIP] Maybe convert RelationModifiers to actual modifiers.
@@ -50,7 +50,7 @@ namespace SolKom.TK.Classes
         }
         public string OtherFactionID = string.Empty;
         public List<RelationStruct> Modifiers = new();
-        
+
         public FactionRelation(Faction sender, Faction reciever)
         {
             OtherFactionID = reciever.Id;
@@ -89,6 +89,27 @@ namespace SolKom.TK.Classes
 
     public class Faction
     {
+        private static readonly int[][] BaseOpinionModifierTable = new int[][] {
+            //                            Anarchy | Democracy | Republic | Monarchy | Autocracy | Oligarchy | Technocracy | Communal | Theocracy | Totalitariat | Collective | Scourge | Niekroniak |
+            //                            ANARCHY   DEMOCRACY   REPUBLIC    MONARCHY    AUTOCRACY   OLIGARCHY   TECHNOCRACY     COMMUNAL    THEOCRACY   TOTALITARIAT    SCOURGE     NIEKRONIAK  COLLECTIVE
+            new int[] /* ANARCHY */     { -25,      -25,        -25,        -25,        -25,        -25,        -25,            -25,        -25,        -25,            -100,       -25,        -25,    },
+            new int[] /* DEMOCRACY */   { -25,      25,         -15,        -25,        -25,        -25,        25,             0,          -25,        -100,           -100,       -50,        -15,    },
+            new int[] /* REPUBLIC */    { -25,      -15,        25,         -25,        -25,        -25,        -25,            -25,        -25,        -50,            -100,       -50,        -25,    },
+            new int[] /* MONARCHY */    { -25,      -25,        -25,        0,          -15,        -15,        -25,            -25,        -15,        -25,            -100,       -25,        -25,    },
+            new int[] /* AUTOCRACY */   { -25,      -25,        -25,        -15,        0,          -15,        -25,            -25,        -15,        -15,            -100,       -25,        -25,    },
+            new int[] /* OLIGARCHY */   { -25,      -25,        -25,        -15,        -15,        0,          -25,            -25,        -15,        -15,            -100,       -25,        -25,    },
+            new int[] /* TECHNOCRACY */ { -25,      25,         -25,        -25,        -25,        -25,        25,             -25,        -25,        -15,            -100,       -15,        -25,    },
+            new int[] /* COMMUNAL */    { -25,      0,          -25,        -25,        -25,        -25,        -25,            0,          -25,        -50,            -100,       -25,        -25,    },
+            new int[] /* THEOCRACY */   { -25,      -25,        -25,        -15,        -15,        -15,        -25,            -25,        -25,        -25,            -100,       -25,        -25,    },
+            new int[] /* TOTALITARIAT*/ { -25,      -100,       -50,        -25,        -15,        -15,        -15,            -50,        -25,        0,              -100,       0,          -25,    },
+            new int[] /* SCOURGE */     { -100,     -100,       -100,       -100,       -100,       -100,       -100,           -100,       -100,       -100,           -100,       -100,       -100,   },
+            new int[] /* NIEKRONIAK */  { -25,      -50,        -50,        -25,        -25,        -25,        -15,            -25,        -25,        0,              -100,       100,        -25,    },
+            new int[] /* COLLECTIVE */  { -25,      -15,        -25,        -25,        -25,        -25,        -25,            -25,        -25,        -25,            -100,       -25,        -100,   },
+        };
+
+        public static int[][] GetBaseOpinionModifierTable() => BaseOpinionModifierTable;
+        public static int GetBaseOpinion(GovernmentType aggressor, GovernmentType defender) => BaseOpinionModifierTable[(int)aggressor][(int)defender];
+
         public string Id;
         public string Name;
         public string Flag = string.Empty; /// [WIP] Use URI to file, or store image locally.

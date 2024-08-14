@@ -114,7 +114,7 @@ namespace SolKom.TK.Classes.Data
             // Return a modified version of the Relation modifier for Government Type opinion modifier.
             if (aggressor != null && defender != null && modifier.Equals(RelationModifier.BASE_GOVERNMENT_OPINION))
             {
-                foundModifier.SetValue(UniversalData.GetBaseOpinion(aggressor.GovernmentType, defender.GovernmentType));
+                foundModifier.SetValue(Faction.GetBaseOpinion(aggressor.GovernmentType, defender.GovernmentType));
             }
             return foundModifier;
 

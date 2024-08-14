@@ -101,6 +101,7 @@ Add Durations for modifiers.
 Add System-Wide modifiers.
 Add Sector-Wide modifiers.
 Add Galaxy-Wide modifiers.
+Automate the creation of relations between all factions when a new faction is made. ResetRelations would be made worthless, then.
 =-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-
 =-=-=-=-=-=-=-=-=-=Convieniences=-=-=-=-=-=-=-=-=-=-
 Generate random planets

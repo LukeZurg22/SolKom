@@ -15,7 +15,7 @@ namespace SolKom.TK
         public UniversalData()
         {
             Instance = this;
-            Galaxy = new Galaxy();
+            Galaxy = new Galaxy().GenerateRandomSectors();
             FactionManager.ResetRelations();
         }
 

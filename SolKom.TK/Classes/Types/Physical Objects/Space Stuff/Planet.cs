@@ -50,7 +50,7 @@ namespace SolKom.TK
     public class Planet : CelestialBody
     {
 
-        PlanetID PlanetID;
+        readonly PlanetID PlanetID;
         PlanetType PlanetType;
         string FactionOwnerID;
         string Name = string.Empty;
@@ -80,6 +80,11 @@ namespace SolKom.TK
         public Planet(Faction faction)
         {
             Create(PlanetType.GetRandomElement(), faction.NamingScheme.GetRandomPlanetName(), new PlanetStats(), faction.Id);
+        }
+        public Planet(int sectorID, int systemID, int planetID)
+        {
+            this.PlanetID = new(sectorID, systemID, planetID);
+            Create(PlanetType.GetRandomElement(), $"{PlanetID}", new PlanetStats(), null);
         }
         public void Create(PlanetType planetType, string name, PlanetStats planetStats, string? faction)
         {

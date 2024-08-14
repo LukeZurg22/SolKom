@@ -2,8 +2,9 @@
 
 namespace SolKom.TK
 {
-    public class Sector
+    internal class Sector
     {
+
         // [IMPL] Color code for sectors.
 
         // [IMPL] ID arrangement for other Galaxies?
@@ -19,16 +20,23 @@ namespace SolKom.TK
         /// </summary>
         readonly Faction? Faction;
 
-        // [WIP] Read pixel data and create systems.
+        public Sector(int id) => ID = id;
 
+        // [WIP] Read pixel data and create systems.
         public void RandomInstantiate()
         {
-            for(int i = 0; i< RNG.RN(100); i++)
+            for(int i = 0; i < RNG.RN(30); i++)
             {
-                SpaceSystem newSystem = new();
-                newSystem.RandomInstantiate();
-                Systems.Add(newSystem);
+                SpaceSystem system = new(ID, i);
+                Console.WriteLine("\tSystem: " + system);
+                system.RandomInstantiate();
+                Systems.Add(system);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{ID}";
         }
     }
 }

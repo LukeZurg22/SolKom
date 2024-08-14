@@ -75,13 +75,20 @@ F_MaxHealth (base health depends on classification)
 
 Implement AMSCAL system as something; special mechanic?
 
-=-=-=-=-=-=-=-=-=-=NEXT TIME=-=-=-==-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=STAGE 1=-=-=-==-=-=-=-=-=-=-
 [!] Country modifiers.
 [!] 	-> Country stats
-Random Sector instantiation
-Random faction instantiation
+[!] Random Sector instantiation
+Random new-faction instantiation
 Proper Planet modifiers
 More planet stats (like, 2 -> 4 more. This has gotta be good.)
+=-=-=-=-=-=-=-=-=-=STAGE 2=-=-=-==-=-=-=-=-=-=-
+Flesh out country stats
+Flesh out planet stats
+Add more planet modifiers
+Add custom faction creation (limited by console text input. Just for testing.)
+Stress-test the generation of Sectors->Systems->Planets in the thousands, then hundreds-of thousands, then millions.
+
 =-=-=-=-=-=-=-=-=-=Things To Add=-=-=-=-=-=-=-=-=-=
 Faction -> Flag : /// Base64 string, or localized project image. Likely limit the flags and make it local for simplicity. - Flag (internally stored and base64 upload)
 Formable nations

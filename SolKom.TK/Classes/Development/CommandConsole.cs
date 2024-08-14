@@ -199,6 +199,7 @@ namespace SolKom.TK
         }
         #endregion
 
+        #region Console Helper Classes & Functions
         /// <summary>
         /// "Spits" out colored text, alongside any text put adjacent to it.
         /// </summary>
@@ -232,5 +233,6 @@ namespace SolKom.TK
                 foreText = front;
             }
         }
+        #endregion
     }
 }
